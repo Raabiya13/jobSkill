@@ -1,0 +1,278 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GenAI</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.google.com/">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="{{ url_for('static', filename='Welcome.css') }}">
+
+</head>
+<body>
+    <div id="particles-js"></div>
+
+
+
+
+    
+        <nav id="mainNavbar" class="navbar navbar-dark navbar-expand-md">
+            <button class="navbar-toggler" data-toggle="collapse" data-target="#navlinks">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navlinks">
+                <ul class="navbar-nav">
+                    <li class="nav-items">
+                        <a href="#home" class="nav-link">Home</a>  <!-- Make sure href has a proper link -->
+                    </li>
+                    <li class="nav-items">
+                        <a href="#about" class="nav-link">About</a>  <!-- Replace with actual route -->
+                    </li>
+                    <li class="nav-items">
+                        <a href="#signup" class="nav-link">Sign up</a>  <!-- Replace with actual route -->
+                    </li>
+                </ul>
+            </div>
+          
+                <a class="nb navbar-brand fix-top" href="/">Skill Based Job Matcher 🤖</a> <!-- Ensure it's pointing to the homepage -->
+              
+        </nav>
+        
+
+    
+    <center>
+      <section id="home">
+     <div class="container justify-content-center">
+        <div class="box align-item-center">
+            
+        </div>
+        <div class="box overlay justify-content-center">
+            <h3 id="genai-link" class="title">JobGenei.</h3>
+            <h5 class="sub">GenAI.<span>powered by gemini.</h5>
+        </div>
+      </div>
+      </section>
+    </center>
+      
+
+
+
+
+    <section id="about">
+      
+      <div class="container1">
+        <h1 class="abtt">About Us</h1>
+      <div>
+        <p>Welcome to Generative AI for <strong> Skill-Based Job Matching</strong>, an innovative platform designed to bridge the gap between skills and opportunities. 
+          <br>Our mission is to empower individuals by providing tailored job recommendations based on their unique talents, 
+          <br>even beyond formal education or traditional qualifications.
+        </div>
+          
+       
+          <div>
+          <br>By leveraging cutting-edge generative AI technology, we create a personalized, 
+          <br>interactive experience that helps users identify opportunities aligned with their skills and interests. 
+          <br>Whether you're an aspiring full-stack developer, a creative freelancer, or a hands-on hobbyist, 
+          <br>our platform connects you with roles that suit your strengths.
+          </div>
+        
+          <div>
+          <br>We believe in inclusivity and aim to support marginalized groups, 
+          <br>ensuring that everyone has access to the tools they need for success. 
+          <br>Through guided skill assessments, interactive suggestions, and upskilling resources, we strive to turn potential into opportunities.
+          </div>
+         
+          <br>Join us in transforming the job search process and unlocking new possibilities for your future!</p>
+        </div>
+    
+    </section>
+
+
+
+    <section id="signup">
+      
+      <div class="container2">
+        <h1 class="sign">Signup</h1>
+      
+        <div class="login-section">
+          <form action="/login" method="post">
+              <div class="input-group">
+                  <label for="username">Username:</label>
+                  <input type="text" id="username" name="username" placeholder="Enter your username" required>
+              </div>
+              <div class="input-group">
+                  <label for="password">Password:</label>
+                  <input type="password" id="password" name="password" placeholder="Enter your password" required>
+              </div>
+              <button class="login-button" type="submit">Login</button>
+          </form>
+      </div>
+      </div>
+    
+    </section>
+
+  
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+    
+  particlesJS('particles-js', {
+    "particles": {
+      "number": {
+        "value": 100,
+        "density": {
+          "enable": true,
+          "value_area": 800
+        }
+      },
+      "color": {
+        "value": "#ffffff" /* White particles */
+      },
+      "shape": {
+        "type": "circle",
+        "stroke": {
+          "width": 0,
+          "color": "#ffffff" /* Optional: White stroke */
+        }
+      },
+      "opacity": {
+        "value": 0.5,
+        "random": true
+      },
+      "size": {
+        "value": 5,
+        "random": true
+      },
+      "line_linked": {
+        "enable": true,
+        "distance": 150,
+        "color": "#ffffff", /* White connecting lines */
+        "opacity": 0.4,
+        "width": 1
+      },
+      "move": {
+        "enable": true,
+        "speed": 2,
+        "direction": "none",
+        "random": false,
+        "straight": false,
+        "out_mode": "out",
+        "bounce": false
+      }
+    },
+    "interactivity": {
+      "detect_on": "canvas",
+      "events": {
+        "onhover": {
+          "enable": true,
+          "mode": "repulse"
+        },
+        "onclick": {
+          "enable": true,
+          "mode": "push"
+        }
+      },
+      "modes": {
+        "repulse": {
+          "distance": 100
+        },
+        "push": {
+          "particles_nb": 4
+        }
+      }
+    },
+    "retina_detect": true
+  });
+    
+        // JavaScript to redirect when "GenAI" is clicked
+        document.getElementById('genai-link').addEventListener('click', function() {
+            window.location.href = "/start";  // Redirect to the Flask route for job.html
+        });
+
+        document.querySelector('#signup').addEventListener('mouseenter',function() {
+            alert("after login,Click Jobgenei.");
+        });
+
+        // Example: Avoid unnecessary redirects
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function(event) {
+                event.preventDefault();  // Prevent the default link behavior
+        // Handle custom actions like showing content without redirecting
+            });
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+          anchor.addEventListener('click', function(e) {
+              e.preventDefault();
+              const target = document.querySelector(this.getAttribute('href'));
+              const offset = document.querySelector("#mainNavbar").offsetHeight;
+
+              window.scrollTo({
+                  top: target.offsetTop - offset,
+                  behavior: "smooth"
+              });
+          });
+      });
+      
+
+      
+      document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', function(event) {
+            const targetSection = document.querySelector(this.getAttribute('href'));
+            
+            if (targetSection && targetSection.id === "about") {
+                event.preventDefault();
+                
+                // Remove existing animation class if present
+                targetSection.classList.remove('slide-in');
+    
+                // Trigger reflow to restart the animation
+                void targetSection.offsetWidth;
+    
+                // Add the slide-in animation class
+                targetSection.classList.add('slide-in');
+    
+                // Smoothly scroll into view
+                targetSection.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    });
+    
+    document.querySelectorAll('.nav-link').forEach(link => {
+      link.addEventListener('click', function(event) {
+          const targetSection = document.querySelector(this.getAttribute('href'));
+  
+          if (targetSection && targetSection.id === "signup") { // For the Login page
+              event.preventDefault();
+  
+              // Remove any existing animation class to allow replay
+              targetSection.classList.remove('slide-in-left');
+  
+              // Trigger reflow to restart the animation
+              void targetSection.offsetWidth;
+  
+              // Add the new slide-in-left animation class
+              targetSection.classList.add('slide-in-left');
+  
+              // Scroll to the section smoothly
+              targetSection.scrollIntoView({ behavior: 'smooth' });
+          }
+      });
+  });
+  
+  $(document).ready(function () {
+    $(document).scroll(function () {
+        var $nav = $("#mainNavbar");
+        $nav.toggleClass("scrolled", $(this).scrollTop() > $nav.height());
+    });
+});
+    </script>
+
+</body>
+</html>

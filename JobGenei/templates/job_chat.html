@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Skill-Based Job Matching Chat</title>
+</head>
+<body>
+    <div id="particles-js"></div>
+<div class="chat-container">
+    <div class="head chat-header">
+        Skill-Based Job Matcher💻
+    </div>
+    <div class="chat-box">
+        {% if message %}
+            <p class="message bot">Here are your tailored job recommendations:</p>
+            <ul>
+                {% for recommendation in message %}
+                    <li>{{ recommendation }}</li>
+                {% endfor %}
+            </ul>
+        {% elif user_skills %}
+            <p class="message bot">Based on your skills <strong>{{ user_skills }}</strong><br>, here are some recommendations:</p>
+        {% elif user_subdomain %}
+            <p class="message bot">Please select your skills in <strong> {{ user_subdomain }}:</strong></p>
+            <form action="/recommend" method="post">
+                <input type="hidden" name="user_domain" value="{{ user_domain }}">
+                <input type="hidden" name="user_subdomain" value="{{ user_subdomain }}">
+                {% for skill in skills %}
+                    <label>
+                        <input type="checkbox" name="skills" value="{{ skill }}"> {{ skill }}
+                    </label><br><br>
+                {% endfor %}
+                <button class=" recbut button" type="submit">Get Recommendations 🤖</button>
+            </form>
+        {% elif user_domain %}
+            <p class="message bot">You selected <strong>{{ user_domain }}</strong>. Please choose a subdomain:</p>
+            <form action="/subdomain" method="post">
+                <input type="hidden" name="user_domain" value="{{ user_domain }}">
+                {% for subdomain in subdomains %}
+                    <button class="button" name="subdomain" value="{{ subdomain }}">{{ subdomain }}</button><br><br>
+                {% endfor %}
+            </form>
+        {% else %}
+            <p class="message bot">Select a domain to start:</p>
+            <form action="/domain" method="post">
+                {% for domain in domains %}
+                    <button class="button" name="domain" value="{{ domain }}">{{ domain }}</button><br><br>
+                {% endfor %}
+            </form>
+        {% endif %}
+    </div>
+</div>
+
+
+
+
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+<script>
+    particlesJS('particles-js', {
+        "particles": {
+          "number": {
+            "value": 100,
+            "density": {
+              "enable": true,
+              "value_area": 800
+            }
+          },
+          "color": {
+            "value": "#ffffff" /* White particles */
+          },
+          "shape": {
+            "type": "circle",
+            "stroke": {
+              "width": 0,
+              "color": "#ffffff" /* Optional: White stroke */
+            }
+          },
+          "opacity": {
+            "value": 0.5,
+            "random": true
+          },
+          "size": {
+            "value": 5,
+            "random": true
+          },
+          "line_linked": {
+            "enable": true,
+            "distance": 150,
+            "color": "#ffffff", /* White connecting lines */
+            "opacity": 0.4,
+            "width": 1
+          },
+          "move": {
+            "enable": true,
+            "speed": 2,
+            "direction": "none",
+            "random": false,
+            "straight": false,
+            "out_mode": "out",
+            "bounce": false
+          }
+        },
+        "interactivity": {
+          "detect_on": "canvas",
+          "events": {
+            "onhover": {
+              "enable": true,
+              "mode": "repulse"
+            },
+            "onclick": {
+              "enable": true,
+              "mode": "push"
+            }
+          },
+          "modes": {
+            "repulse": {
+              "distance": 100
+            },
+            "push": {
+              "particles_nb": 4
+            }
+          }
+        },
+        "retina_detect": true
+      });
+    </script>
+</body>
+</html>
